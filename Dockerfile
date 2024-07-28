@@ -7,11 +7,12 @@ WORKDIR /app
 # Install dependencies
 RUN apk update && apk add --no-cache python3 build-base chromium curl tar
 
+ENV VERSION="v0.18.9"
 # Set PYTHON env
 ENV PYTHON=/usr/bin/python3
 
 # Fetch the release tarball and extract it
-RUN curl -L https://github.com/bigcapitalhq/bigcapital/archive/refs/tags/v0.18.9.tar.gz | tar xz --strip 1
+RUN curl -L https://github.com/bigcapitalhq/bigcapital/archive/refs/tags/${VERSION}.tar.gz | tar xz --strip 1
 RUN ls
 # Copy application dependency manifests to the container image.
 #COPY package.json ./
