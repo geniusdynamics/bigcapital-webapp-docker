@@ -15,11 +15,7 @@ ENV PYTHON=/usr/bin/python3
 RUN curl -L https://github.com/bigcapitalhq/bigcapital/archive/refs/tags/${VERSION}.tar.gz | tar xz --strip 1
 RUN ls
 # Copy application dependency manifests to the container image.
-#COPY package.json ./
-#COPY pnpm-lock.yaml ./pnpm-lock.yaml
-#COPY lerna.json ./lerna.json
-#COPY pnpm-workspace.yaml ./pnpm-workspace.yaml
-#COPY packages/webapp/package.json ./packages/webapp/
+
 
 # Install pnpm and dependencies
 RUN npm install -g pnpm
